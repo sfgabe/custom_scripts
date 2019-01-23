@@ -12,6 +12,7 @@ Control a mechanical decora / paddle type light switch with an SG90 Micro Servo 
 
 Details on Thingiverse here: https://www.thingiverse.com/thing:3289916
 
-## DHT11.py
+## DHT11_***.py
 
-Gets the temp and humity from a DHT11 and sends it out to Home Assistant via MQTT
+Gets the temp and humity from a DHT11 and sends it out to Home Assistant via MQTT. 
+Both scripts do exactly the same thing but may vary in accuracy or reliability. Currently testing...
