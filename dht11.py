@@ -26,7 +26,7 @@ def my_callback():
     if humidity is not None and temperature is not None:
         print('Temp={0:0.1f}*C  Humidity={1:0.1f}% at '.format(temperature, humidity) + str(datetime.datetime.now()))
         log = open(file, "w")
-        print ('Temp={0:0.1f}*C  Humidity={1:0.1f}% at '.format(temperature, humidity) + str(datetime.datetime.now()), file = $
+        print ('Temp={0:0.1f}*C  Humidity={1:0.1f}% at '.format(temperature, humidity) + str(datetime.datetime.now()), file = log)
     else:
         print('Failed to get reading. Try again! Checked at ' + str(datetime.datetime.now()))
         log = open(file, "w")
