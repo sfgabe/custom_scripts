@@ -186,5 +186,7 @@ if __name__ == '__main__':
         log = open(file, "w")
         print ('Temp={0:0.1f}*C  Humidity={1:0.1f}% at '.format((d['temperature']), (d['humidity'])) + str(datetime.datetime.n$
         publish=mqtt_publish()
+        log.close()
+        publish=mqtt_publish()
         time.sleep(10)
     sensor.close()
