@@ -1,10 +1,12 @@
 # Some Random Scripts
 
-## Fishfeeder.py
+## Fishfeeder.py & fishfeeder360.py
 
-Control a simple fishfeeder with an SG90 Micro Servo and a Raspberry Pi! 
+- Control a barrel style fishfeeder with an SG90 Micro Servo and a Raspberry Pi! 
+  Details on Thingiverse here: https://www.thingiverse.com/thing:3225569
 
-Details on Thingiverse here: https://www.thingiverse.com/thing:3225569
+- Control an auger style fishfeeder with a modified HS-311 servo
+  Thing files here: https://www.thingiverse.com/thing:301532
 
 ## Lightswitch on/off
 
