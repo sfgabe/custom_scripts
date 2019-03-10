@@ -1,0 +1,43 @@
+#!/usr/bin/env python
+# This is an motioneye action button script for a sg90 micro servo pan/tilt like this one: https://www.thingiverse.com/thing:708819
+# You may need to figure out your own MIN / MAX range
+
+import time
+import sys
+import pigpio
+
+if sys.version > '3':
+   buffer = memoryview
+
+TILT=18 # Tilt servo gpio.
+
+TILT_MIN=900.0
+TILT_MAX=2250.0
+
+RUNTIME=1.0
+
+with open('/etc/motioneye/tilt_pos', 'r') as f:
+    tilt_pos = int(f.readline())
+    f.close()
+
+tilt_inc=10
+pi=pigpio.pi() # Connect to local Pi.
+
+start_time = time.time()
+
+while (time.time()-start_time) < RUNTIME:
+
+   pi.set_servo_pulsewidth(TILT, tilt_pos)
+
+   tilt_pos += tilt_inc
+   with open('/etc/motioneye/tilt_pos', 'w') as f:
+       new_tilt_pos = int(tilt_pos)+ tilt_inc
+       record_new_pos = str(new_tilt_pos) 
+       f.write(record_new_pos)
+       f.close()
+   if tilt_pos < TILT_MIN: tilt_pos = TILT_MIN
+   if tilt_pos > TILT_MAX: tilt_pos = TILT_MAX
+
+   time.sleep(0.05) # Nominal 20 updates per second.
+
+pi.stop() # Disconnect from local Pi.
