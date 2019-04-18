@@ -17,3 +17,11 @@
 ## DHT11_***.py
 
 - Gets the temp and humity from a DHT11 and sends it out to Home Assistant via MQTT. Both adafruit and pigpio scripts do exactly the same thing but may vary in accuracy or reliability. Thing files here: https://www.thingiverse.com/thing:3370302
+
+## Mailbox with Temp
+
+- Arduino script for an MQTT enabled desk mailbox and temperature sensor. Thing files and details here: https://www.thingiverse.com/thing:3562862
+
+## Flux Capacitor Neopixel
+
+- Uses a neopixel string as a mini Flux Capacitor from Back to the Future. More details and a Raspberry Pi Zero / RetroPie enclosure here: https://www.thingiverse.com/thing:3562949
