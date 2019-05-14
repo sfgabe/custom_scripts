@@ -39,15 +39,7 @@ OneWire  pin(ONE_WIRE_BUS);  // on pin D4 (a 4.7K resistor is necessary)
 DallasTemperature sensorTemperatureSoil(&pin);
 DeviceAddress sensorDS18B20Address;
 
-/*
-   Function: getMoisureInformation
-   ----------------------------
-     Returns in percentege the value of Moisture
-
-     analogPin: the value of ADC ping that is connected the sensor
-     returns: Returns in percentege the value of Moisture of selected Pin
-*/
-
+/* AO1 Gets Moisure Information */
 int getMoisureInformation(int analogPin) {
   int rawValue = analogRead(analogPin);
   int dryValue = 950; //adjust as needed
@@ -64,6 +56,7 @@ int getMoisureInformation(int analogPin) {
   return friendlyValue;
 }
 
+/* AO2 Gets Light Information */
 int getLightInformation(int analogPin) {
   int rawValue = analogRead(analogPin);
   int lightValue = 1; //adjust as needed
@@ -79,15 +72,7 @@ int getLightInformation(int analogPin) {
   Serial.println(F("%"));
   return friendlyValue;
 }
-/*
-   Function: getTemperatureOfSoil
-   ----------------------------
-     Returns temperature of soil using DS18B20 sensor
-
-     DallasTemperature sensorTemperature: the class created to comunicate to DS18B20 sensor
-     DeviceAddress sensorDS18B20Address : Address of DS18B20A sensor
-     returns: Returns temperature of environment(float)
-*/
+/* Gets Temperature of Soil with DS18B20 */
 float getTemperatureOfSoil(DallasTemperature sensorTemperature ,DeviceAddress sensorDS18B20Address ) {
   sensorTemperature.requestTemperatures(); 
   float soilTemperature = sensorTemperature.getTempC(sensorDS18B20Address);
@@ -96,14 +81,8 @@ float getTemperatureOfSoil(DallasTemperature sensorTemperature ,DeviceAddress se
   Serial.println(F("°C"));
   return soilTemperature; 
 }
-/*
-   Function: delayBetweenReading
-   ----------------------------
-     Returns the delay necessary between readings based on sensor details
 
-     returns: Returns the delay in seconds 
-*/
-
+/* This delay switches between the two analog sensors so we only need the esp8266 single AO pin */
 void setup() {
   Serial.begin(9600);
   setup_wifi();
@@ -116,6 +95,7 @@ void setup() {
   pinMode(LIGHTPIN, OUTPUT);
 }
 
+/* Setup WiFi */
 void setup_wifi()
 {
   delay(100);
@@ -137,6 +117,7 @@ void setup_wifi()
   Serial.println(WiFi.localIP());
 }
 
+/* Run it! */
 void loop()
 {
   if (!mqttClient.connected()) 
@@ -221,6 +202,7 @@ void loop()
   }
 }
 
+/* Connect to MQTT */
 void connect()
 {
   // Loop until we're connected
