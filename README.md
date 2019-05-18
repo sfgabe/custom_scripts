@@ -25,3 +25,8 @@
 ## Flux Capacitor Neopixel
 
 - Uses a neopixel string as a mini Flux Capacitor from Back to the Future. More details and a Raspberry Pi Zero / RetroPie enclosure here: https://www.thingiverse.com/thing:3562949
+
+## Plant Monitor
+
+- Arduino script for an MQTT enabled plant sensor. Thing files and fritz details here: 
+https://www.thingiverse.com/thing:3629215
