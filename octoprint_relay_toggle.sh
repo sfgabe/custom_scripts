@@ -24,12 +24,12 @@
 ## WantedBy=multi-user.target
 ##
 
-Relay1On="http://octopi/plugin/enclosure/setIO?status=true&index_id=1&apikey=YOURAPIKEY"
-Relay1Off="http://octopi/plugin/enclosure/setIO?status=false&index_id=1&apikey=YOURAPIKEY"
-Relay2On="http://octopi/plugin/enclosure/setIO?status=true&index_id=2&apikey=YOURAPIKEY"
-Relay2Off="http://octopi/plugin/enclosure/setIO?status=false&index_id=2&apikey=YOURAPIKEY"
+Relay1On="http://localhost/plugin/enclosure/setIO?status=true&index_id=1&apikey=YOURAPIKEY"
+Relay1Off="http://localhost/plugin/enclosure/setIO?status=false&index_id=1&apikey=YOURAPIKEY"
+Relay2On="http://localhost/plugin/enclosure/setIO?status=true&index_id=2&apikey=YOURAPIKEY"
+Relay2Off="http://localhost/plugin/enclosure/setIO?status=false&index_id=2&apikey=YOURAPIKEY"
 
-StatusCode=$(curl --silent "http://octopi/plugin/enclosure/getOutputStatus?index_id=3&apikey=YOURAPIKEY")
+StatusCode=$(curl --silent "http://localhost/plugin/enclosure/getOutputStatus?index_id=3&apikey=YOURAPIKEY")
 
 if [[ $StatusCode == *"true"* ]]
 then
