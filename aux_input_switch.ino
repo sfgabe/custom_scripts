@@ -10,26 +10,28 @@
 MDNSResponder mdns;
 
 // Replace with your network credentials
-const char* ssid = "YourNetwork";
-const char* password = "YourPassword";
-#define INPUT1_LED  14     // the number of the INPUT1_LED pin
-#define INPUT2_LED  15     // the number of the INPUT2_LED pin
+const char* ssid = "RollinsRogue";
+const char* password = "SonnyNights";
+#define INPUT1_LED  4     // the number of the INPUT1_LED pin
+#define INPUT2_LED  5     // the number of the INPUT2_LED pin
 
 ESP8266WebServer server(80);
 String webSite="";
-int relay1 = 16; 
-int relay2 = 17; 
-int relay3 = 18; 
+int relay1 = 12; 
+int relay2 = 13; 
+int relay3 = 16; 
 
 void setup(void){
   
   webSite +="<title>AUX Input Switch</title>\n";
   webSite+="<button onclick='myFunction()'>HOME</button>";
   webSite+="<script>function myFunction() {location.reload();}</script>";
-  webSite +="<h1>AUX Input Switch</h1><p>Switch #1 <a href=\"input1A\"><button>INPUT1</button></a>&nbsp;<a href=\"input2A\"><button>INPUT2</button></a></p>\n";
+  webSite +="<h1>AUX Input Switch</h1><p>Switch #1 <a href=\"input1\"><button>INPUT1</button></a>&nbsp;<a href=\"input2\"><button>INPUT2</button></a></p>\n";
 
   // preparing GPIOs
-  pinMode(relay, OUTPUT);
+  pinMode(relay1, OUTPUT);
+  pinMode(relay2, OUTPUT);
+  pinMode(relay3, OUTPUT);
   digitalWrite(relay1, LOW);
   digitalWrite(relay2, LOW);
   digitalWrite(relay3, LOW);
