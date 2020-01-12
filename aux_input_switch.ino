@@ -10,8 +10,8 @@
 MDNSResponder mdns;
 
 // Replace with your network credentials
-const char* ssid = "RollinsRogue";
-const char* password = "SonnyNights";
+const char* ssid = "YOURWIFINETWORK";
+const char* password = "YOURWIFIPASSWORD";
 #define INPUT1_LED  4     // the number of the INPUT1_LED pin
 #define INPUT2_LED  5     // the number of the INPUT2_LED pin
 
