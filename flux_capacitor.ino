@@ -61,10 +61,10 @@ byte brightness = 255;
 
 /*********************************** Flux Bar Defintions ********************************/
 /*********************** A is outer group | D is inner group ****************************/
-#define FluxLevel_A 0, 7, 8
-#define FluxLevel_B 1, 6, 9
-#define FluxLevel_C 2, 5, 10
-#define FluxLevel_D 3, 4, 11
+#define FluxLevel_A 0, 4, 11
+#define FluxLevel_B 1, 5, 10
+#define FluxLevel_C 2, 6, 9
+#define FluxLevel_D 3, 7, 8
 
 /******************************** GLOBALS for fade/flash *******************************/
 bool stateOn = false;
