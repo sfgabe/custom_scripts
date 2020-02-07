@@ -513,10 +513,10 @@ void loop() {
     static uint8_t hue = 0;
     
     // Set Flux Groups    
-    byte GroupA[] = {FluxLevel_A};
-    byte GroupB[] = {FluxLevel_B};
-    byte GroupC[] = {FluxLevel_C};
-    byte GroupD[] = {FluxLevel_D};
+    int GroupA = {FluxLevel_A};
+    int GroupB = {FluxLevel_B};
+    int GroupC = {FluxLevel_C};
+    int GroupD = {FluxLevel_D};
 
     // First slide the led in one direction
     for (int i = 0; i < NUM_LEDS; i++) {
