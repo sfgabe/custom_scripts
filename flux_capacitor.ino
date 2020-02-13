@@ -131,7 +131,7 @@ int lightningcounter = 0;
 
 //FUNKBOX
 int idex = 0;                //-LED INDEX (0 to NUM_LEDS-1
-int TOP_INDEX = int(NUM_LEDS / 2);
+int TOP_INDEX = int(NUM_LEDS / 3);
 int thissat = 255;           //-FX LOOPS DELAY VAR
 uint8_t thishuepolice = 0;
 int antipodal_index(int i) {
@@ -686,7 +686,6 @@ void loop() {
     showleds();
   }
 
-
   //EFFECT POLICE ALL
   if (effectString == "police all") {                 //POLICE LIGHTS (TWO COLOR SOLID)
     idex++;
@@ -724,6 +723,22 @@ void loop() {
         leds[i] = CHSV(0, 0, 0);
       }
     }
+    if (transitionTime == 0 or transitionTime == NULL) {
+      transitionTime = 30;
+    }
+    showleds();
+  }
+
+     //EFFECT FLUX CAPACITOR
+  if (effectString == "flux capacitor") {                
+    idex++;
+    if (idex >= NUM_LEDS) {
+      idex = 0;
+    }
+    int idexY = idex;
+    int idexW = antipodal_index(idexY);
+    leds[idexY] = CHSV(250, 191, 115);
+    leds[idexW] = CHSV(252, 237, 162);
     if (transitionTime == 0 or transitionTime == NULL) {
       transitionTime = 30;
     }
