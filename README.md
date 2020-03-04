@@ -22,9 +22,9 @@
 
 - Arduino script for an MQTT enabled desk mailbox and temperature sensor. Thing files and details here: https://www.thingiverse.com/thing:3562862
 
-## Flux Capacitor Neopixel
+## Flux Capacitor Neopixel / Python or Arduino
 
-- Uses a neopixel string as a mini Flux Capacitor from Back to the Future. More details and a Raspberry Pi Zero / RetroPie enclosure here: https://www.thingiverse.com/thing:3562949
+- Uses a neopixel string as a mini Flux Capacitor from Back to the Future. More details in the [IOT Projects Section](https://github.com/sfgabe/OITProjects/tree/master/FluxCapacitor)
 
 ## Plant Monitor
 
