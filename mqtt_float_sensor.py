@@ -11,8 +11,8 @@ mq = paho.Client()
 mq.loop_start()
 
 # Connect to homeassistant
-mq.username_pw_set(username="homeassistant",password="simple")
-mq.connect("home-assistant-pi.local")
+mq.username_pw_set(username="mqtt_username",password="mqtt_password")
+mq.connect("mqtt-server-name-or-ip")
 
 file = "/home/pi/data/current_water_level.txt"
 
